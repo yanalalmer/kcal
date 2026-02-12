@@ -2,14 +2,22 @@
   "name": "kcal",
   "private": true,
   "scripts": {
+    "prepare": "husky",
+    "pre-commit": "lint-staged",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "format": "turbo run format",
+    "check-types": "turbo run check-types",
+    "check-format": "turbo run check-format",
+    "validate": "turbo run check-format check-types lint test"
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "0.7.2",
+    "tsx": "^4.19.3",
     "turbo": "^2.8.7",
     "typescript": "5.9.2"
   },
